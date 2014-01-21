@@ -160,6 +160,10 @@ func (w *Writer) Write(buf []byte) (n int, err error) {
 	return len(buf), nil
 }
 
+func (w *Writer) WriteString(s string) (n int, err error) {
+	return w.Write([]byte(s))
+}
+
 // Flush will flush the current line to the console.
 func (w *Writer) Flush() {
 	w.Write([]byte{'\n'})
