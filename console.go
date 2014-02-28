@@ -27,7 +27,7 @@ package console
 import (
 	"bytes"
 
-	"github.com/neelance/gopherjs/js"
+	"github.com/gopherjs/gopherjs/js"
 )
 
 var c = js.Global.Get("console")
