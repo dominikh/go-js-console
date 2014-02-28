@@ -30,7 +30,7 @@ import (
 	"github.com/neelance/gopherjs/js"
 )
 
-var c = js.Global("console")
+var c = js.Global.Get("console")
 
 // Assert writes msg to the console if b is false.
 func Assert(b bool, msg interface{}) {
