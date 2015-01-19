@@ -33,7 +33,7 @@ import (
 var c = js.Global.Get("console")
 
 // Assert writes msg to the console if b is false.
-func Assert(b bool, msg js.Any) {
+func Assert(b bool, msg interface{}) {
 	c.Call("assert", b, msg)
 }
 
@@ -51,18 +51,18 @@ func Count(label string) {
 // Dir prints a JavaScript representation of the specified object. If
 // the object being logged is an HTML element, then the properties of
 // its DOM representation are displayed.
-func Dir(obj js.Any) {
+func Dir(obj interface{}) {
 	c.Call("dir", obj)
 }
 
 // DirXML Prints an XML representation of the specified object. For
 // HTML elements, calling this method is equivalent to calling Log.
-func DirXML(obj js.Any) {
+func DirXML(obj interface{}) {
 	c.Call("dirxml", obj)
 }
 
 // Error is like Log but also includes a stack trace.
-func Error(objs ...js.Any) {
+func Error(objs ...interface{}) {
 	c.Call("error", objs...)
 }
 
@@ -73,13 +73,13 @@ func Error(objs ...js.Any) {
 //
 // The title will be generated according to the rules of the Log
 // function.
-func Group(objs ...js.Any) {
+func Group(objs ...interface{}) {
 	c.Call("group", objs...)
 }
 
 // GroupCollapsed is like Group, except that the newly created
 // group starts collapsed instead of open.
-func GroupCollapsed(objs ...js.Any) {
+func GroupCollapsed(objs ...interface{}) {
 	c.Call("groupCollapsed", objs...)
 }
 
@@ -92,12 +92,12 @@ func GroupEnd() {
 // to this method, each of which are evaluated and concatenated into a
 // space-delimited string. The first parameter you pass to Log may
 // contain format specifiers.
-func Log(objs ...js.Any) {
+func Log(objs ...interface{}) {
 	c.Call("log", objs...)
 }
 
 // Profile starts a new CPU profile with an optional label.
-func Profile(label js.Any) {
+func Profile(label interface{}) {
 	c.Call("profile", label)
 }
 
@@ -108,18 +108,18 @@ func ProfileEnd() {
 
 // Time starts a new timer with an associated label. Calling TimeEnd
 // with the same label will stop the timer and print the elapsed time.
-func Time(label js.Any) {
+func Time(label interface{}) {
 	c.Call("time", label)
 }
 
 // TimeEnd ends a timer that was started with Time and prints the
 // elapsed time.
-func TimeEnd(label js.Any) {
+func TimeEnd(label interface{}) {
 	c.Call("timeEnd", label)
 }
 
 // Timestamp adds an event to the timeline during a recording session.
-func Timestamp(label js.Any) {
+func Timestamp(label interface{}) {
 	c.Call("timeStamp", label)
 }
 
@@ -131,7 +131,7 @@ func Trace() {
 
 // Warn is like Log but displays a different icon alongside the
 // message.
-func Warn(objs ...js.Any) {
+func Warn(objs ...interface{}) {
 	c.Call("warn", objs...)
 }
 
